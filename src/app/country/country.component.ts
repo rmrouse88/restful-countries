@@ -4,13 +4,15 @@ import { CountryService } from './country.service';
 import { ICountry } from './interfaces/country.interface';
 
 @Component({
-  selector: 'app-country',
+  // selector: 'app-country',
   templateUrl: './country.component.html',
   styleUrls: ['./country.component.css']
 })
 export class CountryComponent{
 
-  countryList:ICountry[];
+  pageTitle:string = "Country Component Selector"
+
+  countries:ICountry[];
 
   constructor(private countryService:CountryService) { }
 
@@ -26,13 +28,16 @@ export class CountryComponent{
   }
 
   get_Country() {
-    this.countryService.getCountries(this._country)
+    if (this._country) {
+      this.countryService.getCountries(this._country)
       .subscribe((data: ICountry[]) => {
         console.log('subscription to service successful')
-        this.countryList = data;
+        console.log(data);
+        this.countries = data;
       }, 
       (err:any) => {
         console.log(err);
       })
+    }
     }
   }
