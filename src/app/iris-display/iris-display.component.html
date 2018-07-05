@@ -1,0 +1,38 @@
+<div class = 'container'>
+
+  <div class = 'row'>
+    
+    <div class = 'col main-container'>
+      <h1>{{ pageTitle }}</h1>
+      <div id = 'main-container'>
+          <label for="randomFilter">Click for good time</label>
+          <input type="text" value = 'sup'>
+      </div>
+    </div>
+  </div>
+    
+    <div class = 'row'>
+      <table class = 'table table-bordered' *ngIf = "irisArray && irisArray.length" class = 'table table-responsible'>
+        <thead class = 'thead-light'>
+          <tr>
+            <th scope = "col">Sep. Length</th>
+            <th scope = "col">Sep. Width</th>
+            <th scope = "col">Petal Length</th>
+            <th scope = "col">Petal Width</th>
+            <th scope = "col"> Species </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor = 'let flower of irisArray'>
+            <td> {{ flower.sepalLength }} </td>
+            <td> {{ flower.sepalWidth }} </td>
+            <td> {{ flower.petalLength }} </td>
+            <td> {{ flower.petalWidth }} </td>
+            <td> {{ flower.species }} </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+</div>
+
+
