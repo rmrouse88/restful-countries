@@ -12,6 +12,7 @@ import { GraphicsComponent } from './graphics/graphics.component';
 import { IrisDisplayComponent } from './iris-display/iris-display.component';
 import { CoreModule } from './core/core.module';
 import { VisualizerComponent } from './visualizer/visualizer.component';
+import { TwitterStreamComponent } from './twitter-stream/twitter-stream.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { VisualizerComponent } from './visualizer/visualizer.component';
     WelcomeComponent,
     GraphicsComponent,
     IrisDisplayComponent,
-    VisualizerComponent
+    VisualizerComponent,
+    TwitterStreamComponent
   ],
   imports: [
     BrowserModule,
